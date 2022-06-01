@@ -1,9 +1,7 @@
-.user{
-  &__input{
-    display: flex;
-    width: 75%;
-    height: 25px;
-    background-color: white;
-    border: 2px;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+#logo-text{
+  display: flex;
+  font-family: 'Pacifico', cursive;
+  margin: 46px;
 }
