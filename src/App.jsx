@@ -14,7 +14,7 @@ function App() {
         sx={{
           '& .MuiTextField-root': { m: 1, width: '25ch' },
           'display': 'flex', 
-          'flex-direction': 'column',
+          'flexDirection': 'column',
           'justifyContent': 'center',
           'alignItems': 'center'
         }}
@@ -25,7 +25,7 @@ function App() {
           disabled
           id="filled-disabled"
           label="Disabled"
-          defaultValue="Hello World"
+          defaultValue="Tell me what the date is"
           variant="filled"
         />
         <TextField
@@ -46,11 +46,26 @@ function App() {
           type="text"
           variant="standard"
         />
+        <Button
+          sx={{
+            'background-color': 'transparent',
+            'border': '2px solid black',
+          }}
+          type="file">
+          Upload Image
+        </Button>
         <Button 
+          component="span"
           id="submit"
           label="submit"
           type="submit"
-        />
+          variant="contained"
+          sx={{
+            'margin': '20px' 
+          }}
+        >
+          Submit
+        </Button>
       </Box>
     </div>
   )
