@@ -3,6 +3,7 @@
 import './App.css'
 import { Box } from '@mui/system'
 import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
 
 function App() {
 
@@ -12,6 +13,10 @@ function App() {
         component="form"
         sx={{
           '& .MuiTextField-root': { m: 1, width: '25ch' },
+          'display': 'flex', 
+          'flex-direction': 'column',
+          'justifyContent': 'center',
+          'alignItems': 'center'
         }}
         noValidate
         autoComplete="off"
@@ -25,21 +30,26 @@ function App() {
         />
         <TextField
           id="filled-text1"
-          label="text"
+          label="text1"
           type="text"
-          variant="filled"
+          variant="standard"
         />
         <TextField
           id="filled-text2"
-          label="text"
+          label="text2"
           type="text"
-          variant="filled"
+          variant="standard"
         />
         <TextField
           id="filled-text3"
-          label="text"
+          label="text3"
           type="text"
-          variant="filled"
+          variant="standard"
+        />
+        <Button 
+          id="submit"
+          label="submit"
+          type="submit"
         />
       </Box>
     </div>
