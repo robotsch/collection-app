@@ -1,43 +1,47 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+// import { useState } from 'react'
+// import Input from './components/Input'
 import './App.css'
+import { Box } from '@mui/system'
+import TextField from '@mui/material/TextField'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div>
+      <Box
+        component="form"
+        sx={{
+          '& .MuiTextField-root': { m: 1, width: '25ch' },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField
+          disabled
+          id="filled-disabled"
+          label="Disabled"
+          defaultValue="Hello World"
+          variant="filled"
+        />
+        <TextField
+          id="filled-text1"
+          label="text"
+          type="text"
+          variant="filled"
+        />
+        <TextField
+          id="filled-text2"
+          label="text"
+          type="text"
+          variant="filled"
+        />
+        <TextField
+          id="filled-text3"
+          label="text"
+          type="text"
+          variant="filled"
+        />
+      </Box>
     </div>
   )
 }
