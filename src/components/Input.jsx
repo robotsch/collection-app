@@ -14,7 +14,8 @@ export default function Input() {
           'display': 'flex', 
           'flexDirection': 'column',
           'justifyContent': 'center',
-          'alignItems': 'center'
+          'alignItems': 'center',
+          'width': '100%'
         }}
         noValidate
         autoComplete="off"
@@ -26,13 +27,6 @@ export default function Input() {
             </i>
           </b>
         </div>
-        <TextField
-          disabled
-          id="filled-disabled"
-          label="Disabled"
-          defaultValue="Tell me what the date is"
-          variant="filled"
-        />
         <TextField
           id="filled-text1"
           label="text1"
@@ -73,8 +67,8 @@ export default function Input() {
         >
           Submit
         </Button>
-        <img id="background-flare" src="src\public\toppng.com-wave-clip-border-wave-border-1046x575.png"></img>
       </Box>
+      <img id="background-flare" src="src\public\toppng.com-wave-clip-border-wave-border-1046x575.png"></img>
     </div>
   )
 }

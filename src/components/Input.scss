@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+// Placeholder for now
+// @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 #logo-text{
   display: flex;
   font-family: 'Pacifico', cursive;
   margin: 46px;
+  text-align: center;
 }
 
-#background-flare{
-  position: absolute;
-  bottom: 0;
+@media only screen and (max-width: 515px){
+  #background-flare{
+    position: absolute;
+    bottom: 0;
+  }
 }
