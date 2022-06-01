@@ -73,6 +73,7 @@ export default function Input() {
         >
           Submit
         </Button>
+        <img id="background-flare" src="src\public\toppng.com-wave-clip-border-wave-border-1046x575.png"></img>
       </Box>
     </div>
   )
