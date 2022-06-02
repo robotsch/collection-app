@@ -46,15 +46,15 @@ export default function Input() {
           variant="standard"
         />
         <Button
-          id="upload-image"
+          component="label"
+          variant="outlined"
           sx={{
-            'background-color': 'transparent',
-            'border': '2px solid black',
-            'margin-top': '17px'
+            'marginTop': '17px'
           }}
-          type="file">
+          >
           Upload Image
-        </Button>
+          <input type="file" hidden/>
+        </Button> 
         <Button 
           component="span"
           id="submit"
