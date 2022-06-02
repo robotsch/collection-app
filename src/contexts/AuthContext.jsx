@@ -32,7 +32,7 @@ export function AuthProvider({ children }) {
       })
   }
 
-  const signOut = () => {
+  const logout = () => {
     signOut(auth)
       .then(() => {
         setUser('')
