@@ -15,9 +15,9 @@ const theme = createTheme({
     },
   },
 });
-export default function SignIn() {
+export default function SignUp() {
 
-  const { signin } = useAuth()
+  const { signup } = useAuth()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -25,7 +25,7 @@ export default function SignIn() {
     const uname = data.get("username")
     const pw = data.get("password")
 
-    signin(uname, pw)
+    signup(uname, pw)
       .then((res) => {
         console.log(res)
       })
@@ -47,7 +47,7 @@ export default function SignIn() {
           }}
         >
           <Typography variant="h5">
-            Sign In
+            Sign Up
           </Typography>
           <Box
             component="form"
@@ -82,7 +82,7 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Sign Up
             </Button>
           </Box>
         </Box>
