@@ -18,7 +18,7 @@ const image = document.querySelector('.image')
 const submit = document.querySelector('.submit')
 
 submit.addEventListener('click', (e) => {
-  db.collection('app-form')
+  db.collection('test')
   .doc()
   .set({
     field1: text1.value,
