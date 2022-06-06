@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Input from "./components/Input"
 import './App.css'
 
@@ -10,9 +9,13 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Input/>
-    </div>
+    <AuthProvider>
+      <Routes>
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/form" element={<Input/>} />
+      </Routes>
+    </AuthProvider>
   )
 }
 
