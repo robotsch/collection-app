@@ -7,7 +7,7 @@ function App() {
 
   return (
     <AuthProvider>
-      <div>hello</div>
+      <div>forever</div>
     </AuthProvider>
   )
 }
