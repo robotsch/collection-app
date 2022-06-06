@@ -25,7 +25,6 @@ export default function Input() {
           e.preventDefault();
         }}
       >
-
         <div id="logo-text">
           <b>
             <i>
