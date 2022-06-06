@@ -6,6 +6,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import {getFirestore, collection, addDoc, doc, getDoc, setDoc} from "firebase/firestore";
 import app from '../firebase'
+import { useState } from "react";
 
 import "./Input.scss";
 
@@ -18,20 +19,30 @@ const theme = createTheme({
 });
 
 export default function Input() {
+  const [uploaded, setUploaded] = useState(false)
   const db = getFirestore(app);
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    
+    // set loading state w/ spinner
+    
     const data = new FormData(e.currentTarget);
+    
     await setDoc(doc(db, "test", "test"), {
       field1: data.get("text1"),
       field2: data.get("text2"),
       field3: data.get("text3")
     })
       .then(() => {
+        setUploaded(true)
+        // update state to uploaded, render new Success page
+        // prompt user to submit again
         console.log("Document successfully written!");
       })
       .catch((err) => {
+        // update to error state, render error page
+        // if error is connectivity, suggest offline upload (stretch)
         console.log("We have a problem: ", err);
       });
   };
