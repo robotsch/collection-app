@@ -47,7 +47,7 @@ export default function SignIn() {
           }}
         >
           <Typography variant="h5">
-            Sign Up
+            Sign In
           </Typography>
           <Box
             component="form"
