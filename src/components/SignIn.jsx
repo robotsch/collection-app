@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useAuth } from "../contexts/AuthContext";
 
 const theme = createTheme({
   palette: {
@@ -15,6 +16,23 @@ const theme = createTheme({
   },
 });
 export default function SignIn() {
+
+  const { signin } = useAuth()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const data = new FormData(e.currentTarget)
+    const uname = data.get("username")
+    const pw = data.get("password")
+
+    signin(uname, pw)
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -29,11 +47,11 @@ export default function SignIn() {
           }}
         >
           <Typography variant="h5">
-            Sign in
+            Sign Up
           </Typography>
           <Box
             component="form"
-            // onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
             noValidate
             sx={{ mt: 1 }}
           >
