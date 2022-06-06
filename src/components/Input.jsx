@@ -38,18 +38,21 @@ export default function Input() {
           type="text"
           variant="standard"
         />
+        <br/>
         <TextField
           id="filled-text2"
           label="text2"
           type="text"
           variant="standard"
         />
+        <br/>
         <TextField
           id="filled-text3"
           label="text3"
           type="text"
           variant="standard"
         />
+        <br/>
         <Button
           id="image"
           component="label"
