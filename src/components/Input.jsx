@@ -1,13 +1,37 @@
 import { Box } from '@mui/system'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
+import { getFirestore } from 'firebase/firestore/lite'
 
 import './Input.scss'
 
 export default function Input() {
 
+  const db = getFirestore();
+
+  const handleSubmit = (e) => {
+    // e.preventDefault()
+    console.log("Hello darkness my old friend")
+
+    const data = new FormData(e.currentTarget)
+  
+    db.collection('test')
+    .add({
+      field1: data.get('text1'),
+      field2: data.get('text2'),
+      field3: data.get('text3'),
+      // image: image.value
+    })
+    .then(() => {
+      appForm.reset()
+      console.log("Document successfully written!")
+    })
+    .catch((err) => {
+      console.log("We have a problem: ", err)
+    })
+  }
+
   return (
-    <div>
       <Box
         id="form"
         component="form"
@@ -21,9 +45,7 @@ export default function Input() {
         }}
         noValidate
         autoComplete="off"
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
+        onSubmit={handleSubmit}
       >
         <div id="logo-text">
           <b>
@@ -77,7 +99,6 @@ export default function Input() {
           Submit
         </Button>
       </Box>
-      <img id="background-flare" src="src\public\toppng.com-wave-clip-border-wave-border-1046x575.png"></img>
-    </div>
+      // <img id="background-flare" src="src\public\toppng.com-wave-clip-border-wave-border-1046x575.png"></img>
   )
 }
