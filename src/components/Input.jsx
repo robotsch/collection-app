@@ -5,9 +5,11 @@ import Button from '@mui/material/Button'
 import './Input.scss'
 
 export default function Input() {
+
   return (
     <div>
       <Box
+        id="form"
         component="form"
         sx={{
           // '& .MuiTextField-root': { m: 1, width: '25ch' },
@@ -19,7 +21,11 @@ export default function Input() {
         }}
         noValidate
         autoComplete="off"
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
       >
+
         <div id="logo-text">
           <b>
             <i>
@@ -46,6 +52,7 @@ export default function Input() {
           variant="standard"
         />
         <Button
+          id="image"
           component="label"
           variant="outlined"
           sx={{
@@ -53,11 +60,11 @@ export default function Input() {
           }}
           >
           Upload Image
-          <input type="file" hidden/>
+          <input type="file" accept="image/*" hidden/>
         </Button> 
-        <Button 
-          component="span"
+        <Button
           id="submit"
+          component="span"
           label="submit"
           type="submit"
           variant="contained"
