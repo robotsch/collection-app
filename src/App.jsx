@@ -1,15 +1,22 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import { Container } from "@mui/material";
+import "./App.css";
 
-import { AuthProvider } from './contexts/AuthContext'
+import SignIn from "./components/SignIn"
+import SignUp from "./components/SignUp";
+import { AuthProvider } from "./contexts/AuthContext";
+
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-
   return (
     <AuthProvider>
-      <div>forever</div>
+      <Routes>
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
     </AuthProvider>
-  )
+  );
 }
 
-export default App
+export default App;
