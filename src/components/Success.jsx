@@ -7,7 +7,7 @@ import "./Success.scss"
 export default function Success(){
   return(
     <div className="success-page">
-      <img src="src\public\verify-success-success-tick-icon-with-png-and-vector-format-372259.png"></img>
+      <img src="src\public\1398913_circle_correct_mark_success_tick_icon.png"></img>
       <p>Your form has been successfully submitted!</p>
       <p>Would you like to submit again?</p>
       <Button component={Link} to="/form">
