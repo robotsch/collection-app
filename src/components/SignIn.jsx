@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
+
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -6,6 +8,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+
 import { useAuth } from "../contexts/AuthContext";
 
 const theme = createTheme({
@@ -17,7 +20,8 @@ const theme = createTheme({
 });
 export default function SignIn() {
 
-  const { signin } = useAuth()
+  const { signin, user } = useAuth()
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -26,8 +30,8 @@ export default function SignIn() {
     const pw = data.get("password")
 
     signin(uname, pw)
-      .then((res) => {
-        console.log(res)
+      .then(() => {
+        navigate("/form")
       })
       .catch((err) => {
         console.log(err)
