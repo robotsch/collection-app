@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useAuth } from "../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -16,23 +17,24 @@ const theme = createTheme({
   },
 });
 export default function SignUp() {
+  const { signup, user, setUser } = useAuth();
 
-  const { signup } = useAuth()
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    const data = new FormData(e.currentTarget)
-    const uname = data.get("username")
-    const pw = data.get("password")
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const uname = data.get("username");
+    const pw = data.get("password");
 
     signup(uname, pw)
-      .then((res) => {
-        console.log(res)
+      .then(() => {
+        navigate("/form");
       })
       .catch((err) => {
-        console.log(err)
-      })
-  }
+        console.log(err);
+      });
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -46,9 +48,7 @@ export default function SignUp() {
             alignItems: "center",
           }}
         >
-          <Typography variant="h5">
-            Sign Up
-          </Typography>
+          <Typography variant="h5">Sign Up</Typography>
           <Box
             component="form"
             onSubmit={handleSubmit}
