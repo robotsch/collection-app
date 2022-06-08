@@ -1,5 +1,4 @@
 import Input from "./components/Input"
-import Success from "./components/Success";
 import './App.css'
 
 import SignIn from "./components/SignIn"
@@ -15,7 +14,6 @@ function App() {
         <Route path="/login" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/form" element={<Input/>} />
-        <Route path="/success" element={<Success/>}/>
       </Routes>
     </AuthProvider>
   )
