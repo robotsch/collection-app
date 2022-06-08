@@ -8,10 +8,12 @@ import {
   getFirestore,
   doc,
   setDoc,
+  GeoPoint,
+  Timestamp,
 } from "firebase/firestore";
 import app from "../firebase";
 import { useState } from "react";
-import Success from "./Success";
+import Success from "./Success"; 
 
 
 const theme = createTheme({
@@ -27,10 +29,29 @@ export default function Input() {
 
   const [submitted, setSubmitted] = useState(false)
 
+  // let lat;
+  // let long;
+  
+  // var options = {
+  //   enableHighAccuracy: true,
+  //   timeout: 5000,
+  //   maximumAge: 0
+  // };
+  
+  // function success(pos) {
+  //   var crd = pos.coords;
+  //   lat = crd.latitude
+  //   long = crd.longitude
+  // }
+  
+  // function error(err) {
+  //   console.warn(`ERROR(${err.code}): ${err.message}`);
+  // }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // set loading state w/ spinner
+    
+    // await navigator.geolocation.getCurrentPosition(success, error, options)
 
     const data = new FormData(e.currentTarget);
 
@@ -38,6 +59,8 @@ export default function Input() {
       field1: data.get("text1"),
       field2: data.get("text2"),
       field3: data.get("text3"),
+      // location: new GeoPoint(lat, long),
+      date: Timestamp.now().toDate(),
     })
       .then(() => {
         // update state to uploaded, render new Success page
