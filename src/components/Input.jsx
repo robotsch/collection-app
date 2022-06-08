@@ -6,10 +6,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import {
   getFirestore,
-  collection,
-  addDoc,
   doc,
-  getDoc,
   setDoc,
 } from "firebase/firestore";
 import app from "../firebase";
